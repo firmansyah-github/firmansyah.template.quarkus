@@ -1,0 +1,1902 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:advCrudGenDomain buildDate="2023-10-19+07:00" xmlns:ns2="http://firmansyah.net/firmansyah-mapping">
+    <generation>
+        <rootDir>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</rootDir>
+        <specifyTemplateDir>false</specifyTemplateDir>
+        <templateDir>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one</templateDir>
+    </generation>
+    <database>
+        <profileName>New PostgreSQL Quarkus</profileName>
+        <catalog>postgres</catalog>
+        <name>New PostgreSQL Quarkus</name>
+        <schema>public</schema>
+        <tablePattern>%</tablePattern>
+        <tableType>TABLE</tableType>
+    </database>
+    <entities>
+        <tableName>articles</tableName>
+        <baseName>articles</baseName>
+        <allFieldSelection>true</allFieldSelection>
+        <create>true</create>
+        <selected>false</selected>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="title" columnSize="255" columnType="varchar" columnName="title" autoincrement="false" ordinalPosition="5" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="1" fieldType="java.lang.String" fieldName="id" columnSize="255" columnType="varchar" columnName="id" autoincrement="false" ordinalPosition="1" columnDataType="12" unique="true"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="description" columnSize="255" columnType="varchar" columnName="description" autoincrement="false" ordinalPosition="3" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="slug" columnSize="255" columnType="varchar" columnName="slug" autoincrement="false" ordinalPosition="4" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="body" columnSize="255" columnType="varchar" columnName="body" autoincrement="false" ordinalPosition="2" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.sql.Timestamp" fieldName="updatedat" columnSize="29" columnType="timestamp" columnName="updatedat" autoincrement="false" ordinalPosition="6" columnDataType="93" unique="false"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="0" fieldType="java.lang.String" fieldName="authorId" columnSize="255" columnType="varchar" columnName="author_id" autoincrement="false" ordinalPosition="7" columnDataType="12" unique="false"/>
+        <exportedKeys pkTableName="articles" pkBaseName="articles" pkColumnName="id" fkTableName="favorite_relationship" fkBaseName="favoriteRelationship" fkColumnName="article_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkowosoel7w8ribsbbat1ph4u7s" pkName="articles_pkey" create="true" exported="true"/>
+        <exportedKeys pkTableName="articles" pkBaseName="articles" pkColumnName="id" fkTableName="tag_relationship" fkBaseName="tagRelationship" fkColumnName="article_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkqmgfrtorm00goskaw7w08x8o3" pkName="articles_pkey" create="true" exported="true"/>
+        <exportedKeys pkTableName="articles" pkBaseName="articles" pkColumnName="id" fkTableName="comments" fkBaseName="comments" fkColumnName="article_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkf64h7ce877ohr18431t5oqcit" pkName="articles_pkey" create="true" exported="true"/>
+        <importedKeys pkTableName="users" pkBaseName="users" pkColumnName="id" fkTableName="articles" fkBaseName="articles" fkColumnName="author_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkjnt23nr1d7wt0sjl2dof5mip5" pkName="users_pkey" create="true" exported="false"/>
+    </entities>
+    <entities>
+        <tableName>comments</tableName>
+        <baseName>comments</baseName>
+        <allFieldSelection>true</allFieldSelection>
+        <create>true</create>
+        <selected>false</selected>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.sql.Timestamp" fieldName="updatedat" columnSize="29" columnType="timestamp" columnName="updatedat" autoincrement="false" ordinalPosition="4" columnDataType="93" unique="false"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="0" fieldType="java.lang.String" fieldName="authorId" columnSize="255" columnType="varchar" columnName="author_id" autoincrement="false" ordinalPosition="6" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="0" fieldType="java.lang.String" fieldName="articleId" columnSize="255" columnType="varchar" columnName="article_id" autoincrement="false" ordinalPosition="5" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="body" columnSize="255" columnType="varchar" columnName="body" autoincrement="false" ordinalPosition="2" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.sql.Timestamp" fieldName="createdat" columnSize="29" columnType="timestamp" columnName="createdat" autoincrement="false" ordinalPosition="3" columnDataType="93" unique="false"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="1" fieldType="java.lang.String" fieldName="id" columnSize="255" columnType="varchar" columnName="id" autoincrement="false" ordinalPosition="1" columnDataType="12" unique="true"/>
+        <importedKeys pkTableName="users" pkBaseName="users" pkColumnName="id" fkTableName="comments" fkBaseName="comments" fkColumnName="author_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkbr9p7rllqhrjo97rucg45lhfx" pkName="users_pkey" create="true" exported="false"/>
+        <importedKeys pkTableName="articles" pkBaseName="articles" pkColumnName="id" fkTableName="comments" fkBaseName="comments" fkColumnName="article_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkf64h7ce877ohr18431t5oqcit" pkName="articles_pkey" create="true" exported="false"/>
+    </entities>
+    <entities>
+        <tableName>favorite_relationship</tableName>
+        <baseName>favoriteRelationship</baseName>
+        <allFieldSelection>true</allFieldSelection>
+        <create>true</create>
+        <selected>false</selected>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="1" fieldType="java.lang.String" fieldName="articleId" columnSize="255" columnType="varchar" columnName="article_id" autoincrement="false" ordinalPosition="2" columnDataType="12" unique="true"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="2" fieldType="java.lang.String" fieldName="userId" columnSize="255" columnType="varchar" columnName="user_id" autoincrement="false" ordinalPosition="1" columnDataType="12" unique="true"/>
+        <importedKeys pkTableName="users" pkBaseName="users" pkColumnName="id" fkTableName="favorite_relationship" fkBaseName="favoriteRelationship" fkColumnName="user_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkvcypov2wfc5kmf5ooyot03nw" pkName="users_pkey" create="true" exported="false"/>
+        <importedKeys pkTableName="articles" pkBaseName="articles" pkColumnName="id" fkTableName="favorite_relationship" fkBaseName="favoriteRelationship" fkColumnName="article_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkowosoel7w8ribsbbat1ph4u7s" pkName="articles_pkey" create="true" exported="false"/>
+    </entities>
+    <entities>
+        <tableName>fguser</tableName>
+        <baseName>fguser</baseName>
+        <allFieldSelection>true</allFieldSelection>
+        <create>false</create>
+        <selected>true</selected>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="image" columnSize="255" columnType="varchar" columnName="image" autoincrement="false" ordinalPosition="4" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="username" columnSize="255" columnType="varchar" columnName="username" autoincrement="false" ordinalPosition="6" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="password" columnSize="255" columnType="varchar" columnName="password" autoincrement="false" ordinalPosition="5" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="bio" columnSize="255" columnType="varchar" columnName="bio" autoincrement="false" ordinalPosition="2" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="email" columnSize="255" columnType="varchar" columnName="email" autoincrement="false" ordinalPosition="3" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="1" fieldType="java.lang.String" fieldName="id" columnSize="2147483647" columnType="uuid" columnName="id" autoincrement="false" ordinalPosition="1" columnDataType="1111" unique="true"/>
+    </entities>
+    <entities>
+        <tableName>follow_relationship</tableName>
+        <baseName>followRelationship</baseName>
+        <allFieldSelection>true</allFieldSelection>
+        <create>true</create>
+        <selected>false</selected>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="1" fieldType="java.lang.String" fieldName="followedId" columnSize="255" columnType="varchar" columnName="followed_id" autoincrement="false" ordinalPosition="2" columnDataType="12" unique="true"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="2" fieldType="java.lang.String" fieldName="userId" columnSize="255" columnType="varchar" columnName="user_id" autoincrement="false" ordinalPosition="1" columnDataType="12" unique="true"/>
+        <importedKeys pkTableName="users" pkBaseName="users" pkColumnName="id" fkTableName="follow_relationship" fkBaseName="followRelationship" fkColumnName="followed_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkesybc71kfuw9t0tfd6rioxi5f" pkName="users_pkey" create="true" exported="false"/>
+        <importedKeys pkTableName="users" pkBaseName="users" pkColumnName="id" fkTableName="follow_relationship" fkBaseName="followRelationship" fkColumnName="user_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fk6paamxmfvok5n7nsdsn1ap9l7" pkName="users_pkey" create="true" exported="false"/>
+    </entities>
+    <entities>
+        <tableName>school</tableName>
+        <baseName>school</baseName>
+        <allFieldSelection>true</allFieldSelection>
+        <create>true</create>
+        <selected>false</selected>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="name" columnSize="255" columnType="varchar" columnName="name" autoincrement="false" ordinalPosition="2" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="1" fieldType="java.lang.String" fieldName="id" columnSize="255" columnType="varchar" columnName="id" autoincrement="false" ordinalPosition="1" columnDataType="12" unique="true"/>
+    </entities>
+    <entities>
+        <tableName>tag_relationship</tableName>
+        <baseName>tagRelationship</baseName>
+        <allFieldSelection>true</allFieldSelection>
+        <create>true</create>
+        <selected>false</selected>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="1" fieldType="java.lang.String" fieldName="articleId" columnSize="255" columnType="varchar" columnName="article_id" autoincrement="false" ordinalPosition="2" columnDataType="12" unique="true"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="2" fieldType="java.lang.String" fieldName="tagId" columnSize="255" columnType="varchar" columnName="tag_id" autoincrement="false" ordinalPosition="1" columnDataType="12" unique="true"/>
+        <importedKeys pkTableName="tags" pkBaseName="tags" pkColumnName="id" fkTableName="tag_relationship" fkBaseName="tagRelationship" fkColumnName="tag_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fksst2y1unkuyid24y2gc1onxvs" pkName="tags_pkey" create="true" exported="false"/>
+        <importedKeys pkTableName="articles" pkBaseName="articles" pkColumnName="id" fkTableName="tag_relationship" fkBaseName="tagRelationship" fkColumnName="article_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkqmgfrtorm00goskaw7w08x8o3" pkName="articles_pkey" create="true" exported="false"/>
+    </entities>
+    <entities>
+        <tableName>tags</tableName>
+        <baseName>tags</baseName>
+        <allFieldSelection>true</allFieldSelection>
+        <create>true</create>
+        <selected>false</selected>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="name" columnSize="255" columnType="varchar" columnName="name" autoincrement="false" ordinalPosition="2" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="1" fieldType="java.lang.String" fieldName="id" columnSize="255" columnType="varchar" columnName="id" autoincrement="false" ordinalPosition="1" columnDataType="12" unique="true"/>
+        <exportedKeys pkTableName="tags" pkBaseName="tags" pkColumnName="id" fkTableName="tag_relationship" fkBaseName="tagRelationship" fkColumnName="tag_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fksst2y1unkuyid24y2gc1onxvs" pkName="tags_pkey" create="true" exported="true"/>
+    </entities>
+    <entities>
+        <tableName>users</tableName>
+        <baseName>users</baseName>
+        <allFieldSelection>true</allFieldSelection>
+        <create>true</create>
+        <selected>false</selected>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="image" columnSize="255" columnType="varchar" columnName="image" autoincrement="false" ordinalPosition="4" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="username" columnSize="255" columnType="varchar" columnName="username" autoincrement="false" ordinalPosition="6" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="password" columnSize="255" columnType="varchar" columnName="password" autoincrement="false" ordinalPosition="5" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="false" pkPosition="1" fieldType="java.lang.String" fieldName="id" columnSize="255" columnType="varchar" columnName="id" autoincrement="false" ordinalPosition="1" columnDataType="12" unique="true"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="bio" columnSize="255" columnType="varchar" columnName="bio" autoincrement="false" ordinalPosition="2" columnDataType="12" unique="false"/>
+        <fieldList create="true" lob="false" nullable="true" pkPosition="0" fieldType="java.lang.String" fieldName="email" columnSize="255" columnType="varchar" columnName="email" autoincrement="false" ordinalPosition="3" columnDataType="12" unique="false"/>
+        <exportedKeys pkTableName="users" pkBaseName="users" pkColumnName="id" fkTableName="favorite_relationship" fkBaseName="favoriteRelationship" fkColumnName="user_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkvcypov2wfc5kmf5ooyot03nw" pkName="users_pkey" create="true" exported="true"/>
+        <exportedKeys pkTableName="users" pkBaseName="users" pkColumnName="id" fkTableName="follow_relationship" fkBaseName="followRelationship" fkColumnName="followed_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkesybc71kfuw9t0tfd6rioxi5f" pkName="users_pkey" create="true" exported="true"/>
+        <exportedKeys pkTableName="users" pkBaseName="users" pkColumnName="id" fkTableName="follow_relationship" fkBaseName="followRelationship" fkColumnName="user_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fk6paamxmfvok5n7nsdsn1ap9l7" pkName="users_pkey" create="true" exported="true"/>
+        <exportedKeys pkTableName="users" pkBaseName="users" pkColumnName="id" fkTableName="comments" fkBaseName="comments" fkColumnName="author_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkbr9p7rllqhrjo97rucg45lhfx" pkName="users_pkey" create="true" exported="true"/>
+        <exportedKeys pkTableName="users" pkBaseName="users" pkColumnName="id" fkTableName="articles" fkBaseName="articles" fkColumnName="author_id" fkSequence="1" updateRule="3" deleteRule="3" fkName="fkjnt23nr1d7wt0sjl2dof5mip5" pkName="users_pkey" create="true" exported="true"/>
+    </entities>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="README.md" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="3"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>README.md.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/README.md.ftl</path>
+        <selected>false</selected>
+        <size>6317</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="pom.xml" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="3"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>pom.xml.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/pom.xml.ftl</path>
+        <selected>false</selected>
+        <size>7814</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>factor.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/factor.ftl</path>
+        <selected>false</selected>
+        <size>26427</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>factor.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/factor.ftl</path>
+        <selected>false</selected>
+        <size>5795</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>.mvn</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/copy/.mvn</path>
+        <selected>false</selected>
+        <size>96</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/resources/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="application.properties" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.resources.application.properties.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.resources.application.properties.ftl</path>
+        <selected>false</selected>
+        <size>2751</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/model/response/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]Response.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.model.response.[class]Response.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.application.web.model.response.[class]Response.java.ftl</path>
+        <selected>false</selected>
+        <size>2896</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/resource/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]Resource.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.resource.[class]Resource.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.application.web.resource.[class]Resource.java.ftl</path>
+        <selected>false</selected>
+        <size>7307</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/resource/abs/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="ResourceUtils.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.resource.abs.ResourceUtils.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.application.web.resource.abs.ResourceUtils.java.ftl</path>
+        <selected>false</selected>
+        <size>6506</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/configuration/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UserConfiguration.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.configuration.UserConfiguration.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.configuration.UserConfiguration.java.ftl</path>
+        <selected>false</selected>
+        <size>2395</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="CreateUser.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.CreateUser.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.feature.CreateUser.java.ftl</path>
+        <selected>false</selected>
+        <size>840</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="LoginUser.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.LoginUser.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.feature.LoginUser.java.ftl</path>
+        <selected>false</selected>
+        <size>844</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/model/request/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="NewUserRequest.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.model.request.NewUserRequest.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.application.web.model.request.NewUserRequest.java.ftl</path>
+        <selected>false</selected>
+        <size>2460</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/user/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UpdateUserInput.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.user.UpdateUserInput.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.model.user.UpdateUserInput.java.ftl</path>
+        <selected>false</selected>
+        <size>1038</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/resource/abs/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="ResourceFilter.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.resource.abs.ResourceFilter.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.application.web.resource.abs.ResourceFilter.java.ftl</path>
+        <selected>false</selected>
+        <size>969</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/configuration/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="ApplicationConfiguration.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.configuration.ApplicationConfiguration.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.configuration.ApplicationConfiguration.java.ftl</path>
+        <selected>false</selected>
+        <size>1833</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UpdateUser.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.UpdateUser.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.feature.UpdateUser.java.ftl</path>
+        <selected>false</selected>
+        <size>849</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/user/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UserRepository.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.user.UserRepository.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.model.user.UserRepository.java.ftl</path>
+        <selected>false</selected>
+        <size>1092</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/qualifiers/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="NoWrapRootValueObjectMapper.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.qualifiers.NoWrapRootValueObjectMapper.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.qualifiers.NoWrapRootValueObjectMapper.java.ftl</path>
+        <selected>false</selected>
+        <size>1062</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/provider/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="TokenProvider.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.provider.TokenProvider.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.provider.TokenProvider.java.ftl</path>
+        <selected>false</selected>
+        <size>950</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/resources/META-INF/resources/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="index.html" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.resources.META-INF.resources.index.html.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.resources.META-INF.resources.index.html.ftl</path>
+        <selected>false</selected>
+        <size>4587</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="mvnw" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="3"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>mvnw.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/mvnw.ftl</path>
+        <selected>false</selected>
+        <size>10588</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="ForbiddenException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.exception.ForbiddenException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.exception.ForbiddenException.java.ftl</path>
+        <selected>false</selected>
+        <size>739</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value=".classpath" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="3"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>.classpath.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/.classpath.ftl</path>
+        <selected>false</selected>
+        <size>1876</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="EmailAlreadyExistsException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.EmailAlreadyExistsException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.exception.EmailAlreadyExistsException.java.ftl</path>
+        <selected>false</selected>
+        <size>808</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/mapper/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="BeanValidationExceptionMapper.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.mapper.BeanValidationExceptionMapper.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.mapper.BeanValidationExceptionMapper.java.ftl</path>
+        <selected>false</selected>
+        <size>1368</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/impl/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="LoginUserImpl.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.impl.LoginUserImpl.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.feature.impl.LoginUserImpl.java.ftl</path>
+        <selected>false</selected>
+        <size>1801</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value=".mvn/wrapper/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="MavenWrapperDownloader.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>.mvn.wrapper.MavenWrapperDownloader.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/.mvn.wrapper.MavenWrapperDownloader.java.ftl</path>
+        <selected>false</selected>
+        <size>5453</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/model/request/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UpdateUserRequest.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.model.request.UpdateUserRequest.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.application.web.model.request.UpdateUserRequest.java.ftl</path>
+        <selected>false</selected>
+        <size>2679</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/model/request/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="LoginUserRequest.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.model.request.LoginUserRequest.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.application.web.model.request.LoginUserRequest.java.ftl</path>
+        <selected>false</selected>
+        <size>1422</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/mapper/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="BusinessExceptionMapper.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.mapper.BusinessExceptionMapper.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.mapper.BusinessExceptionMapper.java.ftl</path>
+        <selected>false</selected>
+        <size>3505</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/mapper/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="InfrastructureExceptionMapper.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.mapper.InfrastructureExceptionMapper.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.mapper.InfrastructureExceptionMapper.java.ftl</path>
+        <selected>false</selected>
+        <size>2682</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value=".gitignore" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="3"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>.gitignore.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/.gitignore.ftl</path>
+        <selected>false</selected>
+        <size>694</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/constants/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="ValidationMessages.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.constants.ValidationMessages.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.model.constants.ValidationMessages.java.ftl</path>
+        <selected>false</selected>
+        <size>2391</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/validator/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="ModelValidator.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.validator.ModelValidator.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.validator.ModelValidator.java.ftl</path>
+        <selected>false</selected>
+        <size>1482</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/user/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="User.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.user.User.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.model.user.User.java.ftl</path>
+        <selected>false</selected>
+        <size>1847</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/security/profile/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Role.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.security.profile.Role.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.security.profile.Role.java.ftl</path>
+        <selected>false</selected>
+        <size>713</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/security/filter/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="AuthenticationFilter.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.security.filter.AuthenticationFilter.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.security.filter.AuthenticationFilter.java.ftl</path>
+        <selected>false</selected>
+        <size>3397</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UserNotFoundException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.UserNotFoundException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.exception.UserNotFoundException.java.ftl</path>
+        <selected>false</selected>
+        <size>784</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value=".mvn/wrapper/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="maven-wrapper.properties" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>.mvn.wrapper.maven-wrapper.properties.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/.mvn.wrapper.maven-wrapper.properties.ftl</path>
+        <selected>false</selected>
+        <size>726</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/repository/hibernate/entity/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UserEntity.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.entity.UserEntity.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.entity.UserEntity.java.ftl</path>
+        <selected>false</selected>
+        <size>1408</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="FilterOperatorNotValidException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.FilterOperatorNotValidException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.exception.FilterOperatorNotValidException.java.ftl</path>
+        <selected>false</selected>
+        <size>825</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/repository/hibernate/panache/utils/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="SimpleQueryBuilder.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.panache.utils.SimpleQueryBuilder.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.panache.utils.SimpleQueryBuilder.java.ftl</path>
+        <selected>false</selected>
+        <size>1725</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/model/response/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="ErrorResponse.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.model.response.ErrorResponse.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.application.web.model.response.ErrorResponse.java.ftl</path>
+        <selected>false</selected>
+        <size>1191</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/repository/hibernate/panache/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="AbstractPanacheRepository.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.panache.AbstractPanacheRepository.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.panache.AbstractPanacheRepository.java.ftl</path>
+        <selected>false</selected>
+        <size>1378</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/impl/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="FindUserByIdImpl.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.impl.FindUserByIdImpl.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.feature.impl.FindUserByIdImpl.java.ftl</path>
+        <selected>false</selected>
+        <size>1248</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/security/annotation/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Secured.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.security.annotation.Secured.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.security.annotation.Secured.java.ftl</path>
+        <selected>false</selected>
+        <size>1148</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/util/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="PageResult.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.util.PageResult.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.model.util.PageResult.java.ftl</path>
+        <selected>false</selected>
+        <size>828</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/provider/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="JwtTokenProvider.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.provider.JwtTokenProvider.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.provider.JwtTokenProvider.java.ftl</path>
+        <selected>false</selected>
+        <size>3383</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="InfrastructureException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.exception.InfrastructureException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.exception.InfrastructureException.java.ftl</path>
+        <selected>false</selected>
+        <size>742</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="FilterConjunctionNotValidException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.FilterConjunctionNotValidException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.exception.FilterConjunctionNotValidException.java.ftl</path>
+        <selected>false</selected>
+        <size>837</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="FilterValueNotValidException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.FilterValueNotValidException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.exception.FilterValueNotValidException.java.ftl</path>
+        <selected>false</selected>
+        <size>813</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/impl/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="FindUserByUsernameImpl.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.impl.FindUserByUsernameImpl.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.feature.impl.FindUserByUsernameImpl.java.ftl</path>
+        <selected>false</selected>
+        <size>1264</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/repository/hibernate/panache/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UserRepositoryPanache.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.panache.UserRepositoryPanache.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.panache.UserRepositoryPanache.java.ftl</path>
+        <selected>false</selected>
+        <size>2699</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/user/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="LoginUserInput.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.user.LoginUserInput.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.model.user.LoginUserInput.java.ftl</path>
+        <selected>false</selected>
+        <size>812</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/validation/validator/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="AtLeastOneFieldMustBeNotNullValidator.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.validation.validator.AtLeastOneFieldMustBeNotNullValidator.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.validation.validator.AtLeastOneFieldMustBeNotNullValidator.java.ftl</path>
+        <selected>false</selected>
+        <size>2822</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/provider/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="HashProvider.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.provider.HashProvider.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.model.provider.HashProvider.java.ftl</path>
+        <selected>false</selected>
+        <size>787</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="InvalidPasswordException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.InvalidPasswordException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.exception.InvalidPasswordException.java.ftl</path>
+        <selected>false</selected>
+        <size>797</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/model/response/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UserResponse.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.model.response.UserResponse.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.application.web.model.response.UserResponse.java.ftl</path>
+        <selected>false</selected>
+        <size>2578</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="mvnw.cmd" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="3"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>mvnw.cmd.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/mvnw.cmd.ftl</path>
+        <selected>false</selected>
+        <size>7004</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UsernameAlreadyExistsException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.UsernameAlreadyExistsException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.exception.UsernameAlreadyExistsException.java.ftl</path>
+        <selected>false</selected>
+        <size>822</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="ModelValidationException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.ModelValidationException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.exception.ModelValidationException.java.ftl</path>
+        <selected>false</selected>
+        <size>830</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/user/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="NewUserInput.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.user.NewUserInput.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.model.user.NewUserInput.java.ftl</path>
+        <selected>false</selected>
+        <size>1010</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/security/filter/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="AuthorizationFilter.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.security.filter.AuthorizationFilter.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.security.filter.AuthorizationFilter.java.ftl</path>
+        <selected>false</selected>
+        <size>3635</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/user/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UserModelBuilder.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.user.UserModelBuilder.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.model.user.UserModelBuilder.java.ftl</path>
+        <selected>false</selected>
+        <size>1315</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/resource/abs/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="FilterCondition.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.resource.abs.FilterCondition.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.application.web.resource.abs.FilterCondition.java.ftl</path>
+        <selected>false</selected>
+        <size>950</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/impl/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="CreateUserImpl.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.impl.CreateUserImpl.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.feature.impl.CreateUserImpl.java.ftl</path>
+        <selected>false</selected>
+        <size>2264</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/provider/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="BCryptHashProvider.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.provider.BCryptHashProvider.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.provider.BCryptHashProvider.java.ftl</path>
+        <selected>false</selected>
+        <size>1159</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/validation/constraint/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="AtLeastOneFieldMustBeNotNull.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.validation.constraint.AtLeastOneFieldMustBeNotNull.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.validation.constraint.AtLeastOneFieldMustBeNotNull.java.ftl</path>
+        <selected>false</selected>
+        <size>1322</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="FindUserById.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.FindUserById.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.feature.FindUserById.java.ftl</path>
+        <selected>false</selected>
+        <size>781</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/resource/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UserResource.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.resource.UserResource.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.application.web.resource.UserResource.java.ftl</path>
+        <selected>false</selected>
+        <size>4790</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value=".project" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="3"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>.project.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/.project.ftl</path>
+        <selected>false</selected>
+        <size>939</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/resources/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="resources-config.json" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.resources.resources-config.json.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.resources.resources-config.json.ftl</path>
+        <selected>false</selected>
+        <size>669</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/repository/hibernate/entity/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="EntityUtils.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.entity.EntityUtils.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.entity.EntityUtils.java.ftl</path>
+        <selected>false</selected>
+        <size>2164</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="FilterFieldNotValidException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.FilterFieldNotValidException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.exception.FilterFieldNotValidException.java.ftl</path>
+        <selected>false</selected>
+        <size>821</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="BusinessException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.BusinessException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.exception.BusinessException.java.ftl</path>
+        <selected>false</selected>
+        <size>1213</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UnauthorizedException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.exception.UnauthorizedException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.exception.UnauthorizedException.java.ftl</path>
+        <selected>false</selected>
+        <size>745</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/security/context/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="EmptySecurityContext.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.security.context.EmptySecurityContext.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.security.context.EmptySecurityContext.java.ftl</path>
+        <selected>false</selected>
+        <size>1103</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="LICENSE" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="3"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>LICENSE.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/LICENSE.ftl</path>
+        <selected>false</selected>
+        <size>1556</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="FindUserByUsername.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.FindUserByUsername.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.feature.FindUserByUsername.java.ftl</path>
+        <selected>false</selected>
+        <size>777</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/resource/abs/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="SortCondition.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.resource.abs.SortCondition.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.application.web.resource.abs.SortCondition.java.ftl</path>
+        <selected>false</selected>
+        <size>871</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/web/security/context/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="DecodedJWTSecurityContext.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.web.security.context.DecodedJWTSecurityContext.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.infrastructure.web.security.context.DecodedJWTSecurityContext.java.ftl</path>
+        <selected>false</selected>
+        <size>1750</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/impl/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="one" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="UpdateUserImpl.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.impl.UpdateUserImpl.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/one/src.main.java.org.example.realworldapi.domain.feature.impl.UpdateUserImpl.java.ftl</path>
+        <selected>false</selected>
+        <size>3008</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/model/request/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Update[class]Request.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.model.request.Update[class]Request.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.application.web.model.request.Update[class]Request.java.ftl</path>
+        <selected>false</selected>
+        <size>1710</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/configuration/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]Configuration.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.configuration.[class]Configuration.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.infrastructure.configuration.[class]Configuration.java.ftl</path>
+        <selected>false</selected>
+        <size>4373</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Find[class]ByFilter.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.Find[class]ByFilter.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.Find[class]ByFilter.java.ftl</path>
+        <selected>false</selected>
+        <size>1245</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Find[class]ByForeignKey.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.Find[class]ByForeignKey.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.Find[class]ByForeignKey.java.ftl</path>
+        <selected>false</selected>
+        <size>1086</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/impl/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Find[class]ByPrimaryKeyImpl.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.impl.Find[class]ByPrimaryKeyImpl.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.impl.Find[class]ByPrimaryKeyImpl.java.ftl</path>
+        <selected>false</selected>
+        <size>1799</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/[instance]/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]Filter.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.[instance].[class]Filter.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.model.[instance].[class]Filter.java.ftl</path>
+        <selected>false</selected>
+        <size>1138</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Find[class]ByPrimaryKey.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.Find[class]ByPrimaryKey.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.Find[class]ByPrimaryKey.java.ftl</path>
+        <selected>false</selected>
+        <size>1111</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/repository/hibernate/entity/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]Entity.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.entity.[class]Entity.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.entity.[class]Entity.java.ftl</path>
+        <selected>false</selected>
+        <size>2049</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/resource/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]ResourceUtils.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.resource.[class]ResourceUtils.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.application.web.resource.[class]ResourceUtils.java.ftl</path>
+        <selected>false</selected>
+        <size>3244</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/[instance]/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]Repository.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.[instance].[class]Repository.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.model.[instance].[class]Repository.java.ftl</path>
+        <selected>false</selected>
+        <size>1416</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/repository/hibernate/entity/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]EntityKey.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.entity.[class]EntityKey.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.entity.[class]EntityKey.java.ftl</path>
+        <selected>false</selected>
+        <size>1608</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Update[class].java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.Update[class].java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.Update[class].java.ftl</path>
+        <selected>false</selected>
+        <size>990</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]AlreadyExistsException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.[class]AlreadyExistsException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.exception.[class]AlreadyExistsException.java.ftl</path>
+        <selected>false</selected>
+        <size>823</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/model/response/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]ListResponse.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.model.response.[class]ListResponse.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.application.web.model.response.[class]ListResponse.java.ftl</path>
+        <selected>false</selected>
+        <size>1318</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/impl/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Update[class]Impl.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.impl.Update[class]Impl.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.impl.Update[class]Impl.java.ftl</path>
+        <selected>false</selected>
+        <size>2309</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/application/web/model/request/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="New[class]Request.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.application.web.model.request.New[class]Request.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.application.web.model.request.New[class]Request.java.ftl</path>
+        <selected>false</selected>
+        <size>1505</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/[instance]/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="New[class]Input.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.[instance].New[class]Input.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.model.[instance].New[class]Input.java.ftl</path>
+        <selected>false</selected>
+        <size>1022</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/impl/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Delete[class]Impl.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.impl.Delete[class]Impl.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.impl.Delete[class]Impl.java.ftl</path>
+        <selected>false</selected>
+        <size>1467</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Create[class].java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.Create[class].java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.Create[class].java.ftl</path>
+        <selected>false</selected>
+        <size>980</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/[instance]/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]ModelBuilder.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.[instance].[class]ModelBuilder.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.model.[instance].[class]ModelBuilder.java.ftl</path>
+        <selected>false</selected>
+        <size>1422</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/exception/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]NotFoundException.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.exception.[class]NotFoundException.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.exception.[class]NotFoundException.java.ftl</path>
+        <selected>false</selected>
+        <size>841</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Delete[class].java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.Delete[class].java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.Delete[class].java.ftl</path>
+        <selected>false</selected>
+        <size>829</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/[instance]/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class].java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.[instance].[class].java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.model.[instance].[class].java.ftl</path>
+        <selected>false</selected>
+        <size>1036</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/impl/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Create[class]Impl.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.impl.Create[class]Impl.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.impl.Create[class]Impl.java.ftl</path>
+        <selected>false</selected>
+        <size>2247</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/feature/impl/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Find[class]ByFilterImpl.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.feature.impl.Find[class]ByFilterImpl.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.feature.impl.Find[class]ByFilterImpl.java.ftl</path>
+        <selected>false</selected>
+        <size>1896</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/infrastructure/repository/hibernate/panache/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="[class]RepositoryPanache.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.panache.[class]RepositoryPanache.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.infrastructure.repository.hibernate.panache.[class]RepositoryPanache.java.ftl</path>
+        <selected>false</selected>
+        <size>6897</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_PATH" desc="Private System placeholder for create generated relative path" value="src/main/java/org/example/realworldapi/domain/model/[instance]/" no="1"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_TYPE" desc="Please choose one option from this Private Gen type list: one, many, copy" value="many" no="2"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_GEN_FILENAME" desc="Private System placeholder for define file name that need to be generated, if required to be different with template name" value="Update[class]Input.java" no="3"/>
+        <fileAttrList allFileAttrSelected="false" create="true" name="PRV_SYS_IS_REPLACE" desc="Private System placeholder for replace previous generated file or create unique file name,list:true,false" value="true" no="4"/>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>src.main.java.org.example.realworldapi.domain.model.[instance].Update[class]Input.java.ftl</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/many/src.main.java.org.example.realworldapi.domain.model.[instance].Update[class]Input.java.ftl</path>
+        <selected>false</selected>
+        <size>1029</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>lombok.jar</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/copy/lombok.jar</path>
+        <selected>false</selected>
+        <size>1975594</size>
+    </fileTmplts>
+    <fileTmplts>
+        <allFileAttrSelected>true</allFileAttrSelected>
+        <create>true</create>
+        <generatedType>copy</generatedType>
+        <generatedPath>/Users/macddl01/Laboratorium/ws-myappgen/quarkus-generated-test</generatedPath>
+        <name>quarkus-logo.png</name>
+        <path>/Users/macddl01/Laboratorium/ws-myappgen/firmansyah.template.quarkus/copy/quarkus-logo.png</path>
+        <selected>false</selected>
+        <size>55537</size>
+    </fileTmplts>
+    <filePublicAttrs>
+        <entry>
+            <key>PUB_SYS_DTM@bool</key>
+            <value>
+                <name>PUB_SYS_DTM@bool</name>
+                <no>23</no>
+                <value>java.lang.Boolean</value>
+                <desc>test</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_DB_TYPE</key>
+            <value>
+                <name>PUB_DB_TYPE</name>
+                <no>9</no>
+                <value>postgresql</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_SONAR_URL</key>
+            <value>
+                <name>PUB_SONAR_URL</name>
+                <no>10</no>
+                <value>https://sonarcloud.io</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_SYS_DTM@timestamp</key>
+            <value>
+                <name>PUB_SYS_DTM@timestamp</name>
+                <no>20</no>
+                <value>java.time.LocalDateTime</value>
+                <desc>test</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_APP_ROOT</key>
+            <value>
+                <name>PUB_APP_ROOT</name>
+                <no>14</no>
+                <value>/api</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_APP_YEAR</key>
+            <value>
+                <name>PUB_APP_YEAR</name>
+                <no>25</no>
+                <value>2019</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_SONAR_ORG</key>
+            <value>
+                <name>PUB_SONAR_ORG</name>
+                <no>11</no>
+                <value>firmansyah-github</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_APP_CREATOR</key>
+            <value>
+                <name>PUB_APP_CREATOR</name>
+                <no>24</no>
+                <value>Diego Luiz</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_APP_PKG</key>
+            <value>
+                <name>PUB_APP_PKG</name>
+                <no>5</no>
+                <value>realworld-api-quarkus</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_SONAR_BRANCH</key>
+            <value>
+                <name>PUB_SONAR_BRANCH</name>
+                <no>13</no>
+                <value>master</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_DB_IP</key>
+            <value>
+                <name>PUB_DB_IP</name>
+                <no>15</no>
+                <value>localhost</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_APP_NAME</key>
+            <value>
+                <name>PUB_APP_NAME</name>
+                <no>1</no>
+                <value>RealWorld Example App</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_SONAR_LOGIN</key>
+            <value>
+                <name>PUB_SONAR_LOGIN</name>
+                <no>4</no>
+                <value>c8f07b8da132920eac5e3c9b92b34224739710d2</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_APP_IP</key>
+            <value>
+                <name>PUB_APP_IP</name>
+                <no>2</no>
+                <value>localhost</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_DB_PASS</key>
+            <value>
+                <name>PUB_DB_PASS</name>
+                <no>19</no>
+                <value>xWmGrW0hi4</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_APP_PORT</key>
+            <value>
+                <name>PUB_APP_PORT</name>
+                <no>3</no>
+                <value>8080</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_DB_USER</key>
+            <value>
+                <name>PUB_DB_USER</name>
+                <no>17</no>
+                <value>postgres</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_DB_PORT</key>
+            <value>
+                <name>PUB_DB_PORT</name>
+                <no>16</no>
+                <value>5432</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_APP_VER</key>
+            <value>
+                <name>PUB_APP_VER</name>
+                <no>8</no>
+                <value>1.0-SNAPSHOT</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_SYS_DTM@serial</key>
+            <value>
+                <name>PUB_SYS_DTM@serial</name>
+                <no>21</no>
+                <value>java.lang.Integer</value>
+                <desc>test</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_SYS_DTM@int4</key>
+            <value>
+                <name>PUB_SYS_DTM@int4</name>
+                <no>22</no>
+                <value>java.lang.Integer</value>
+                <desc>test</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_APP_ART</key>
+            <value>
+                <name>PUB_APP_ART</name>
+                <no>7</no>
+                <value>realworldapiservice</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_APP_GROUP</key>
+            <value>
+                <name>PUB_APP_GROUP</name>
+                <no>6</no>
+                <value>org.example</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_SONAR_PROJ_KEY</key>
+            <value>
+                <name>PUB_SONAR_PROJ_KEY</name>
+                <no>12</no>
+                <value>firmansyah-github_quarkus-generated-test</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+        <entry>
+            <key>PUB_DB_NAME</key>
+            <value>
+                <name>PUB_DB_NAME</name>
+                <no>18</no>
+                <value>postgres</value>
+                <desc>Description</desc>
+            </value>
+        </entry>
+    </filePublicAttrs>
+    <fileDefaultAttrs/>
+    <comment>test comment</comment>
+    <draftTemplate/>
+</ns2:advCrudGenDomain>
